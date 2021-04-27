@@ -1,5 +1,5 @@
-import { browser, logging } from 'protractor';
 import { AppPage } from './app.po';
+import { browser, logging } from 'protractor';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', async () => {
-    await page.navigateTo();
-    expect(await page.getTitleText()).toEqual('angulargen6300321 app is running!');
+  it('should display welcome message', () => {
+    page.navigateTo();
+    expect(page.getTitleText()).toEqual('mediapp-frontend app is running!');
   });
 
   afterEach(async () => {

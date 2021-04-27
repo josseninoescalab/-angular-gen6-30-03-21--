@@ -9,7 +9,6 @@ export const environment = {
   TOKEN_AUTH_PASSWORD: 'code89codex',
   TOKEN_NAME: 'access_token',
   REINTENTOS: 3
-
 };
 
 /*
