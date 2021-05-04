@@ -24,25 +24,34 @@ const routes: Routes = [
     path: 'paciente', component: PacienteComponent, children: [
       { path: 'nuevo', component: PacienteEdicionComponent },
       { path: 'edicion/:id', component: PacienteEdicionComponent }
-    ]
+    ], canActivate: [GuardService]
   },
   {
     path: 'examen', component: ExamenComponent, children: [
       { path: 'nuevo', component: ExamenEdicionComponent },
       { path: 'edicion/:id', component: ExamenEdicionComponent }
-    ]
+    ], canActivate: [GuardService]
   },
   {
     path: 'especialidad', component: EspecialidadComponent, children: [
       { path: 'nuevo', component: EspecialidadEdicionComponent },
       { path: 'edicion/:id', component: EspecialidadEdicionComponent }
+    ], canActivate: [GuardService]
+  },
+  { path: 'medico', component: MedicoComponent, canActivate: [GuardService] },
+  { path: 'consulta', component: ConsultaComponent, canActivate: [GuardService] },
+  { path: 'consulta-especial', component: EspecialComponent, canActivate: [GuardService] },
+  { path: 'consulta-wizard', component: WizardComponent, canActivate: [GuardService] },
+  { path: 'buscar', component: BuscarComponent, canActivate: [GuardService] },
+  { path: 'reporte', component: ReporteComponent, canActivate: [GuardService] },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'recuperar', component: RecuperarComponent, children: [
+      { path: ':token', component: TokenComponent }
     ]
   },
-  { path: 'medico', component: MedicoComponent},
-  { path: 'consulta', component: ConsultaComponent},
-  { path: 'consulta-especial', component: EspecialComponent},
-  { path: 'consulta-wizard', component: WizardComponent},
-  { path: 'buscar', component: BuscarComponent},
+  { path: 'not-403', component: Not403Component },
+  { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 
 @NgModule({
